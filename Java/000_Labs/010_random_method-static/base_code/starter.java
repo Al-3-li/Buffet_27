@@ -24,6 +24,17 @@ class starter {
 		int a = (int)(Math.random()*(scar-scab)+scab);
 		int b = (int)(Math.random()*(scar-scab)+scab);
 		int r = (int)(Math.random()*(scar-scab)+scab);
-		System.out.print(s + ", " + c + ", " + a + ", " + b + ", " + r);
+		System.out.println(s + ", " + c + ", " + a + ", " + b + ", " + r);
+
+		int scat = (int)(Math.random()*10);
+		System.out.println("A number between 0-9: " + scat);
+		int scap = (int)(Math.random()*11-1);
+		System.out.println(("A number between 1-10: ") + scap);
+		double scam = Math.random()*1+2.5;
+		System.out.println("A number between 2.5 and 3.5: " + scam);
+		double scaw = Math.random()*575+14;
+		System.out.print("A double betweeen 14 and 589: " + scaw);
+
+
 	}
 }
