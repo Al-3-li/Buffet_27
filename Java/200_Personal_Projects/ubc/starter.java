@@ -9,7 +9,7 @@ class starter {
         getColor(r, e, d);
 
         int or = (int) (Math.random()*129+150);
-        int an = (int) (Math.random()*129+140);
+        int an = (int) (Math.random()*126+130);
         int ge = (int) (Math.random()*0);
         getColor(or,an,ge);
 
@@ -55,34 +55,42 @@ class starter {
        int me = (int) (Math.random()*128);
        getColor(pls,help,me);
 
-       boolean red = getColor(r, e, d);
-       boolean orange = getColor(or,an,ge);
-       boolean yellow = getColor(ye,ll,ow);
-       boolean green = getColor(gr,ee,n);
-       boolean blue = getColor(b,lu,eeee);
-       boolean purple = getColor(pu,rp,le);
+       getColor(r, e, d);
+       getColor(or,an,ge);
+       getColor(ye,ll,ow);
+       getColor(gr,ee,n);
+       getColor(b,lu,eeee);
+       getColor(pu,rp,le);
 
-       Scanner lzl = newScanner(System.in);
+       Scanner lzl = new Scanner(System.in);
+
+       String Farbe = lzl.next();
 
 
-       System.out.print("My favorite color is: " + lzl);
-       if (red){
-        System.out.print(red);
-       };
-       if (orange){
-        System.out.print(orange);
+       System.out.print("My favorite color is: " + Farbe);
+       if (Farbe.equals("red")){
+        System.out.print("red");
+        getColor(r, e, d);
        }
-       if (yellow){
-        System.out.print(yellow);
+       else if (Farbe.equals("orange")){
+        System.out.print("orange");
+        getColor(or, an,ge);
        }
-       if (green){
-        System.out.print(green);
+       else if (Farbe.equals("yellow")){
+        System.out.print("yellow");
+        getColor(ye,ll,ow);
        }
-       if (blue){
-        System.out.print(blue);
+       else if (Farbe.equals("green")){
+        System.out.print("green");
+        getColor(gr,ee,n);
        }
-       if (purple){
-        System.out.print(purple);
+       else if (Farbe.equals("blue")){
+        System.out.print("blue");
+        getColor(b, lu, eeee);
+       }
+       else if (Farbe.equals("purple")){
+        System.out.print("purple");
+        getColor(pu,rp,le);
        }
 
 
