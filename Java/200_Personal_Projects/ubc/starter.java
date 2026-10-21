@@ -9,11 +9,11 @@ class starter {
        
 
         int or = (int) (Math.random()*129+150);
-        int an = (int) (Math.random()*128);
+        int an = (int) (Math.random()*128+56);
         int ge = (int) (Math.random()*0);
         
 
-       int ye = (int) (Math.random()*129+128);
+       int ye = (int) (Math.random()*129+120);
        int ll = (int) (Math.random()*129+128);
        int ow = (int) (Math.random()*0);
        

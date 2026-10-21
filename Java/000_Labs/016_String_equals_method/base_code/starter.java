@@ -25,5 +25,6 @@ class starter {
 		else{
 			System.out.println("You've decided to not chose a role. Rerun program.");
 		} 
+		LZ.close;
 	}
 }
