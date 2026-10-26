@@ -23,9 +23,16 @@ class starter {
 		System.out.println("");
 		System.out.println("Would you like to play the slots? (Yes/yes/Y/y)");
 		String Ja = XD.next();
+		if (Ja.equals("No") || Ja.equals("no") || Ja.equals("N") || Ja.equals("n")){
+			System.out.println("Okay! Come back tomorrow! You still have $" + dol + " left! :D");
+		}
 		while (Ja.equals("Yes") || Ja.equals("yes") || Ja.equals("Y") || Ja.equals("y")){
+			if(dol==0){
+				System.out.println("You are out of money! Don't go into debt, please come again next time!");
+				break;
+			}
 
-			System.out.print("You have " + dol + ". How much would you like to wager?");
+			System.out.println("You have " + dol + ". How much would you like to wager?");
 			int euro= XD.nextInt();
 			System.out.println("");
 			System.out.println("Great! Let's play!!!");
@@ -38,22 +45,35 @@ class starter {
 			System.out.println(" | " + nu + " | " + mb + " | " + er + " | ");
 			if (nu != er && er != mb && nu !=mb){
 				System.out.println("Didn't win this time, better luck next time.");
-				System.out.println("You now have $" + (100-euro) + ".");
+				System.out.println("You now have $" + (dol-euro) + ".");
 			}
 			else if (nu==er && er!=mb){
 				System.out.println("You won! Your wager has now been doubled!");
-				System.out.println("You now have $" + (100+(euro*2)) + ".");
+				System.out.println("You now have $" + (dol+(euro*2)) + ".");
 			}
 			else if (nu!=er && er==mb){
 				System.out.println("You won! Your wager has now been doubled!");
-				System.out.println("You now have $" + (100+euro*2) + ".");
+				System.out.println("You now have $" + (dol+euro*2) + ".");
+			}
+			else if (nu==er && er!=mb){
+				System.out.println("You won! Your wager has now been doubled!");
+				System.out.println("You now have $" + (dol+euro*2) + ".");
+			}
+			else if (nu!=er && nu==mb){
+				System.out.println("You won! Your wager has now been doubled!");
+				System.out.println("You now have $" + (dol+euro*2) + ".");
 			}
 			else{
 				System.out.println("Jackpot! Your wager has now been tripled!");
-				System.out.println("You now have $" + (100+euro*3) + ".");
+				System.out.println("You now have $" + (dol+euro*3) + ".");
 			}
-			dol=euro;
+			dol =dol-euro;
 			System.out.println("Would you like to play the slots? (Yes/yes/Y/y)");
+			Ja=XD.next();
+			if (Ja.equals("No") || Ja.equals("no") || Ja.equals("N") || Ja.equals("n")){
+			System.out.println("Okay! Come back tomorrow! You still have $" + dol + " left! :D");
 		}
 	}
+	XD.close();
+}
 }
