@@ -3,3 +3,4 @@
 3. Type into the terminal "python base.pyc"
 
 This will show you the expected labOutput. There's a hidden file in labOutput that is the compiled python file.
+print("Hello world.")
