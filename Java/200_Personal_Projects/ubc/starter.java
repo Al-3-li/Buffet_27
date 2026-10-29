@@ -96,7 +96,7 @@ class starter {
     else if (cat.equals("Gambling")){
         System.out.println("What game?");
         System.out.println("~Slots");
-        System.out.println("~");
+        System.out.println("~Guessing");
         String game= DX.next();
         if (game.equals("Slots")){
             Scanner XD = new Scanner(System.in);
@@ -157,13 +157,61 @@ class starter {
 				System.out.println("Jackpot! Your wager has now been tripled!");
 				System.out.println("You now have $" + (dol+euro*3) + ".");
 			}
-			dol =dol+euro;
+			dol =100-euro;
 			System.out.println("Would you like to play the slots? (Yes/yes/Y/y)");
 			Ja=XD.next();
 			if (Ja.equals("No") || Ja.equals("no") || Ja.equals("N") || Ja.equals("n")){
 			System.out.println("Okay! Come back tomorrow! You still have $" + dol + " left! :D");
 		}
 	}
+        }
+    else if (game.equals("Guessing")){
+        Scanner XD= new Scanner(System.in);
+        System.out.println("Rules: ");
+        System.out.println("1. You have 5 tries");
+        System.out.println("2. Place your wager (You have $100)");
+        System.out.println("3.Pick a random number between 1 and 5000");
+        System.out.println("Are you ready to begin? (Yes/yes/Y/y)");
+        int mon = 0;
+        int ey= 100;
+        String y= XD.next();
+        if (y.equals("No") || y.equals("no") || y.equals("N") || y.equals("n")){
+            System.out.println("Such a shame! Come back another time, you have $" + ey + " leftover!");
+        }
+        while(y.equals("Yes") || y.equals("yes") || y.equals("Y") || y.equals("y")){
+            if(mon==5){
+                System.out.println("You have no more attempts. Please redo the game.");
+                break;
+            }
+            System.out.println("Please place a wager!");
+            int wager= XD.nextInt();
+            System.out.println("The number has been picked. Please begin guessing!");
+            int ran= (int)(Math.random()*5001+1);
+            int in= XD.nextInt();
+            if(in==ran){
+                System.out.println("You got the number! Your money is tripled.");
+                ey= ey*3;
+                System.out.println("You now have $" + ey + "to spend.");
+                mon= mon+5;
+            }
+            else if(in>ran){
+                System.out.println("That was not the number. Your guess was too high.");
+                System.out.println("Please input another number!");
+                in=XD.nextInt();
+                mon++;
+            }
+            else if(in<ran){
+                System.out.println("That was not the number. Your guess was too low.");
+                System.out.println("Please input another number.");
+                in=XD.nextInt();
+                mon++;
+            }
+            else{
+                System.out.println("That was not an allowed number, please input a different one.");
+                in=XD.nextInt();
+            }
+            System.out.println("Would you like to play again?");
+            y=XD.next();
         }
     }
 }
@@ -173,5 +221,6 @@ public static void getColor(int red, int green, int blue){
         String swatch = startColor + "                    " + resetColor;
         System.out.println(swatch);
     }
+}
 }
 

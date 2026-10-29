@@ -1,0 +1,6 @@
+lolz= str(4)
+zlol= str(2)
+lzoz=str(4*2)
+print("The first number is: " + lolz)
+print("The second number is: " + zlol)
+print("The answer is: " + lzoz)
