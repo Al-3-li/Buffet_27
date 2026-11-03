@@ -52,54 +52,48 @@ class starter {
        getColor(pu,rp,le);
        getColor(pi,nn,k);
 
-       Scanner lzl = new Scanner(System.in);
-
-
        System.out.println("Pick a color from the list above! (E.X 'orange')");
-       String Farbe = lzl.next();
-       if (Farbe.equals("red")){
+       String Coloore = DX.next();
+       if (Coloore.equals("red")){
         
         getColor(r, e, d);
        }
-       else if (Farbe.equals("orange")){
+       else if (Coloore.equals("orange")){
         
         getColor(or, an,ge);
        }
-       else if (Farbe.equals("yellow")){
+       else if (Coloore.equals("yellow")){
         
         getColor(ye,ll,ow);
        }
-       else if (Farbe.equals("green")){
+       else if (Coloore.equals("green")){
         
         getColor(gr,ee,n);
        }
-       else if (Farbe.equals("blue")){
+       else if (Coloore.equals("blue")){
         
         getColor(b, lu, eeee);
        }
-       else if (Farbe.equals("purple")){
+       else if (Coloore.equals("purple")){
         
         getColor(pu,rp,le);
        }
-       else if(Farbe.equals("pink")){
+       else if(Coloore.equals("pink")){
        
         getColor(pi,nn,k);
        }
        else{
         System.out.println("The color is too specific! Please go broader.");
        }
-       lzl.close();
-
-
-		// Call getColor(#, #, #);
+       DX.close();
 	}
     else if (cat.equals("Gambling")){
+        Scanner XD = new Scanner(System.in);
         System.out.println("What game?");
         System.out.println("~Slots");
         System.out.println("~Guessing");
-        String game= DX.next();
+        String game= XD.next();
         if (game.equals("Slots")){
-            Scanner XD = new Scanner(System.in);
 		int dol= 100;
 		System.out.println("Slot Machine Rules:"); 
 		System.out.println("1. Each player starts with $100.");
@@ -166,7 +160,6 @@ class starter {
 	}
         }
     else if (game.equals("Guessing")){
-        Scanner XD= new Scanner(System.in);
         System.out.println("Rules: ");
         System.out.println("1. You have 5 tries");
         System.out.println("2. Place your wager (You have $100)");
@@ -178,16 +171,16 @@ class starter {
         if (y.equals("No") || y.equals("no") || y.equals("N") || y.equals("n")){
             System.out.println("Such a shame! Come back another time, you have $" + ey + " leftover!");
         }
-        while(y.equals("Yes") || y.equals("yes") || y.equals("Y") || y.equals("y")){
-            if(mon==5){
-                System.out.println("You have no more attempts. Please redo the game.");
-                break;
-            }
+        if(y.equals("Yes") || y.equals("yes") || y.equals("Y") || y.equals("y")){
             System.out.println("Please place a wager!");
             int wager= XD.nextInt();
             System.out.println("The number has been picked. Please begin guessing!");
             int ran= (int)(Math.random()*5001+1);
             int in= XD.nextInt();
+            while(mon!=5){
+            if(mon>=5){
+                break;
+            }
             if(in==ran){
                 System.out.println("You got the number! Your money is tripled.");
                 ey= ey*3;
@@ -210,17 +203,16 @@ class starter {
                 System.out.println("That was not an allowed number, please input a different one.");
                 in=XD.nextInt();
             }
-            System.out.println("Would you like to play again?");
-            y=XD.next();
+        }
         }
     }
 }
-public static void getColor(int red, int green, int blue){
+    }
+    public static void getColor(int red, int green, int blue){
         String startColor = "\u001B[48;2;" + red + ";" + green + ";" + blue + "m";
         String resetColor = "\u001B[0m";
         String swatch = startColor + "                    " + resetColor;
         System.out.println(swatch);
     }
-}
 }
 

@@ -1,0 +1,6 @@
+name=input("Whose birthday is it? ")
+print("Happy birthday to you!")
+print("Happy birthday to you!")
+print("Happy birthday, dear " + name)
+print("Happy birthday to you!")
+print("Check your english grammar, Mr. Poole.")
